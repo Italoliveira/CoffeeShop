@@ -1,0 +1,25 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+
+.logo-header{
+    font-weight: bolder;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+
+.subtitulo{
+    font-family: 'Dancing Script', cursive;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-home{
+
+    @apply h-full w-4/5 bg-white h-80 p-2 shadow-sm shadow-black;
+
+}
