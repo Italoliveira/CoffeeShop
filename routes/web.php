@@ -3,7 +3,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\produtoController;
-use App\Http\Controllers\categoriasController;
+use App\Http\Controllers\UsuariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +28,6 @@ Route::prefix('admin')->group(function(){
     });
 
     Route::resource('produtos', produtoController::class);
-
-    Route::resource('categorias', categoriasController::class);
+    Route::resource('usuarios', UsuariosController::class);
 
 });

@@ -72,8 +72,6 @@
 
             <div class="w-1/2 flex flex-col justify-between">
 
-
-
                 <div class="flex items-center space-x-6 justify-center flex-1">
                     <div class="shrink-0">
                         <img id='preview_img' class="h-16 w-16 object-cover rounded-sm"

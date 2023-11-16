@@ -35,8 +35,12 @@
             var topo = (altura - window.innerHeight - altura) / 2;
 
             // Abrindo a janela com dimensões fixas
-            window.open(url, 'janelaImutavel', 'width=' + largura + ',height=' + altura + ',left=' + esquerda + ',top=' +
-                topo + 'scrollbars=no,resizable=no');
+            var popup = window.open(url, 'janelaImutavel', 'width=' + largura + ',height=' + altura + 'scrollbars=no,resizable=no');
+            
+            popup.onbeforeunload  = function() {
+                // Atualiza a tela pai
+                location.reload();
+            };
         }
 
         var loadFile = function(event) {
@@ -74,12 +78,6 @@
                     onclick="hideFormProducts()" id="btn-cancel">
                     Cancelar
                 </button>
-
-                <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                    onclick="openWindow('/admin/categorias')">
-                    Categorias
-                </button>
-
             </div>
 
         </div>
