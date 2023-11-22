@@ -10,6 +10,11 @@
     color: white;
 }
 
+.logo-header-login{
+    font-weight: bolder;
+    font-family: 'Dancing Script', cursive;
+}
+
 .subtitulo{
     font-family: 'Dancing Script', cursive;
     font-size: 80px;
