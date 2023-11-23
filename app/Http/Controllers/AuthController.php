@@ -15,10 +15,10 @@ class AuthController extends Controller
         return view('Auth.login');
     }
 
-    public function register(){
+    public function register()
+    {
 
         return view('Auth.register');
-
     }
 
     public function auth(Request $request)
@@ -32,14 +32,17 @@ class AuthController extends Controller
 
                 Auth::attempt(['id' => $usuario->id, 'name' => $usuario->name, 'email' => $data['email'], 'password' => $data['password'], 'tier' => $usuario->tier]);
 
-                return redirect()->route('home');
+                if (Auth::user()->tier = '2') {
+                    return redirect()->route('orders');
 
+                } else {
+
+                    return redirect()->route('home');
+                }
             }
-
         }
 
         return redirect()->route('login')->withErrors(['error' => 'Email ou Senha Invalida']);
-        
     }
 
     public function registerClient(AuthRequest $request)
@@ -54,18 +57,15 @@ class AuthController extends Controller
         $usuario->password = password_hash($data['password'], PASSWORD_BCRYPT);
         $usuario->tier = '1';
 
-        if($usuario->save()){
+        if ($usuario->save()) {
 
             Auth::attempt(['id' => $usuario->id, 'name' => $usuario->name, 'email' => $data['email'], 'password' => $data['password'], 'tier' => $usuario->tier]);
 
             return redirect()->route('newAdress');
-
-        }else{
+        } else {
 
             return redirect()->route('register')->withErrors(['error' => 'Ocorreu um erro inesperado']);
-
         }
-
     }
 
     public function registerAdmin(Request $request)
@@ -80,5 +80,4 @@ class AuthController extends Controller
         Auth::logout();
         return redirect()->route('home');
     }
-
 }

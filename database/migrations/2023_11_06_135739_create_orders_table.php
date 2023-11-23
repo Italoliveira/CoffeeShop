@@ -18,8 +18,9 @@ return new class extends Migration
             $table->decimal('total',8,2);
             $table->string('status');
             $table->string('payment');
-            $table->dateTime('closed');
+            $table->unsignedBigInteger('adress');
             $table->timestamps();
+            $table->foreign('adress')->references('id')->on('adresses')->onDelete('cascade');
             $table->foreign('user')->references('id')->on('users')->onDelete('cascade');
 
         });
@@ -30,6 +31,18 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('orders', function(Blueprint $table){
+
+            $table->dropForeign(['adress']);
+
+        });
+
+        Schema::table('orders', function(Blueprint $table){
+
+            $table->dropForeign(['user']);
+
+        });
+
         Schema::dropIfExists('orders');
     }
 };

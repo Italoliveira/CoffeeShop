@@ -134,7 +134,7 @@
             } else {
 
                 $disable = true;
-                location.reload()
+                location.reload();
             }
 
             document.getElementById('name').disabled = $disable

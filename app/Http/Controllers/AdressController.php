@@ -32,17 +32,19 @@ class AdressController extends Controller
 
         if ($validator = $request->validate($rules, $messages)) {
 
-            $data = $request->only(['street', 'bairro', 'number', 'comp']);
+            $data = $request->only(['street', 'bairro', 'number', 'comp', 'page']);
             $add = new adresses();
             $add->user = Auth::user()->id;
             $add->street = $data['street'];
             $add->number = $data['number'];
             $add->neighborhood = $data['bairro'];
+            $add->comp = ($data['comp']) ? $data['comp']  : '-';
             $add->city = 'São Paulo';
             $add->state = 'SP';
 
             if ($add->save()) {
-                return  redirect()->route('home');
+
+                return  redirect()->route($data['page']);
 
             } else {
 
@@ -53,5 +55,21 @@ class AdressController extends Controller
 
             return  redirect()->route('newAdress')->withErrors($validator)->withInput();
         }
+    }
+
+    public function deleteAdress(Request $request){
+
+        $data = $request->only('id');
+        $add = adresses::find($data['id'])->first();
+        
+        if($add->delete()){
+
+            return redirect()->route('profile');
+
+        }else{
+
+            return redirect()->route('profile')->withErrors(['error' => "Ocorreu um problema Inexperado"]);
+        }
+
     }
 }

@@ -6,6 +6,8 @@
             class="flex flex-col space-y-4 bg-gray-200 p-8 w-2/5 h-2/3 overflow shadow-sm shadow-neutral-200">
 
             @csrf
+            
+            <input type="hidden" name="page" value="home">
 
             <div class="flex justify-center items-center pb-10">
                 <span class="logo-header-login text-5xl text-black">Coffee Shop</span>

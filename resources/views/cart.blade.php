@@ -62,11 +62,12 @@
             <h1 class="font-semibold text-2xl border-b pb-8">Ordem de Compra</h1>
             <div class="flex justify-between mt-10 mb-5"></div>
 
-            
+            <form action="{{route('cart.checkout')}}" method="post">
+              @csrf
             <div>
                 <label for="promo" class="font-semibold inline-block mb-3 text-sm uppercase">Endereço</label>
-                
-                <select class="block p-2 text-gray-600 w-full text-sm">
+
+                <select class="block p-2 text-gray-600 w-full text-sm" name="adress">
                   @foreach($enderecos as $endereco)
                      <option value="{{$endereco->id}}"> {{$endereco->street}}, N° {{$endereco->number}} {{$endereco->comp}} - {{$endereco->neighborhood}} </option>
                   @endforeach
@@ -76,13 +77,14 @@
 
             <div class="py-10">
               <label class="font-medium inline-block mb-3 text-sm uppercase">Forma de Pagamento</label>
-              <select class="block p-2 text-gray-600 w-full text-sm">
+              <select class="block p-2 text-gray-600 w-full text-sm" name="payment">
                 <option value="Dinheiro">Dinheiro</option>
                 <option value="Pix">Pix</option>
                 <option value="Pix">Cartão de Credito/Debito</option>
               </select>
             </div>
-            
+         
+
            <div class="border-t mt-8">
 
               <div class="flex font-semibold justify-between py-6 text-sm uppercase">
@@ -97,13 +99,14 @@
                     }
 
                     echo number_format($total,2);
-
+                     
                   @endphp
-
+                  
                 </span></span>
               </div>
-
-              <button class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Finalizar</button>
+              <input type="submit" value="Finalizar" class="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">
+              
+            </form> 
             </div>
           </div>
     

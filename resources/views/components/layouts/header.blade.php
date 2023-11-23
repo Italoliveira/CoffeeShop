@@ -31,10 +31,8 @@
 
         @auth
 
+            <x-layouts.dropdown/>
 
-            <a href="{{ route('logout') }}">
-                <span class="px-5 font-bold text-white"> {{ Auth::user()->name }} </span>
-            </a>
 
             <a href="{{ route('cart') }}" class="px-2 h-full flex justify-center items-center">
 
@@ -45,11 +43,6 @@
                 <x-icons.cart color="white" height="30px" />
     
             </a>
-
-            
-        <div class="px-2">
-            <x-icons.help color="white" height="30px" />
-        </div>
 
         @endauth
 
