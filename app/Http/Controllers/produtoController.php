@@ -46,8 +46,7 @@ class produtoController extends Controller
         if($request->hasFile('file-image')){
 
             $image = $request->file('file-image');
-
-            $produtos->image = 'storage/' . $image->store('uploads','public');
+            $produtos->image = "storage/" . $image->store('uploads','public');
         }
 
         $produtos->save();
@@ -84,7 +83,7 @@ class produtoController extends Controller
 
                 $image = $request->file('file-image');
     
-                $produto->image = $image->store('uploads','public');
+                $produto->image = "storage/" . $image->store('uploads','public');
             }
             
             $produto->update($data);

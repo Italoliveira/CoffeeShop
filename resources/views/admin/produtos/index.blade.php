@@ -26,21 +26,12 @@
         }
 
         function openWindow(url) {
-            // Especificando largura e altura da janela
-            var largura = 1000;
+
+            var largura = 1200;
             var altura = 400;
 
-            // Calculando o centro da tela
-            var esquerda = (largura - window.innerWidth) / 2;
-            var topo = (altura - window.innerHeight - altura) / 2;
+            var popup = window.open(url, 'popup', 'width=' + largura + ',height=' + altura + 'scrollbars=no,resizable=no');
 
-            // Abrindo a janela com dimensões fixas
-            var popup = window.open(url, 'janelaImutavel', 'width=' + largura + ',height=' + altura + 'scrollbars=no,resizable=no');
-            
-            popup.onbeforeunload  = function() {
-                // Atualiza a tela pai
-                location.reload();
-            };
         }
 
         var loadFile = function(event) {

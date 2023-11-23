@@ -37,7 +37,7 @@
             <div class="flex flex-col space-y-2">
 
                 <div class="flex items-center space-x-2 my-4 text-sm">
-                    <input type="checkbox" name="remeber" id="remeber" class="h-4 w-4">
+                    <input type="checkbox" name="remenber" id="remenber" class="h-4 w-4">
                     <label>Lembrar de mim</label>
                 </div>
 

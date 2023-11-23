@@ -69,7 +69,7 @@
 
                 <select class="block p-2 text-gray-600 w-full text-sm" name="adress">
                   @foreach($enderecos as $endereco)
-                     <option value="{{$endereco->id}}"> {{$endereco->street}}, N° {{$endereco->number}} {{$endereco->comp}} - {{$endereco->neighborhood}} </option>
+                     <option value="{{$endereco->id}}"> {{$endereco->street}}, N° {{$endereco->number}} {{($endereco->comp != '-') ? $endereco->comp : ''}} - {{$endereco->neighborhood}} </option>
                   @endforeach
                 </select>
 

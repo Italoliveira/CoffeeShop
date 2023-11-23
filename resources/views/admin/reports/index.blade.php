@@ -32,7 +32,7 @@
             @foreach ($reports as $report)
 
                 @php
-                    $data = new DateTime({{$report->data}});
+                    $data = new DateTime($report->data);
                 @endphp
 
                 <div class="bg-white rounded-sm shadow-white shadow-sm p-3 space-y-4 my-1 flex items-end">
