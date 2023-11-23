@@ -1,9 +1,9 @@
-<div class="w-full max-w-sm bg-neutral-100 border border-gray-200 rounded-lg shadow ">
+<div class="w-full max-w-sm bg-neutral-100 border border-gray-200 rounded-lg shadow " style="height: 400px">
 
-    <a href="#">
-        <img class="p-8 rounded-t-lg h-72" src="{{asset('storage/' . $asset)}}" alt="product image" />
-    </a>
+    
 
+    <img class="p-2 rounded-t-lg" src="{{asset($asset)}}" alt="product image" style="height: 300px; width: 450px"/>
+   
     <div class="px-5 pb-5">
 
         <a href="{{route('home')}}">

@@ -13,7 +13,7 @@ class CategoriesSeedeer extends Seeder
      */
     public function run(): void
     {
-        $categorias = ['Bebidas', 'Sobremesas', 'Salgados']; 
+        $categorias = [' Bebidas ', 'Lanches & Sobremesas ']; 
 
         foreach($categorias as $categoria){
 

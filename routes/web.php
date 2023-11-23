@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth.check'], function () {
 
     Route::get('/carrinho', [CartController::class, 'index'])->name('cart');
     Route::get('/perfil', [CoffeeController::class, 'profile'])->name('profile');
+    Route::get('/pedidos', [CoffeeController::class, 'historicOrders'])->name('historicOrders');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/enderecos', [AdressController::class, 'newAdress'])->name('newAdress');
     Route::post('/registerAdress', [AdressController::class, 'registerAdress'])->name('registerAdress');

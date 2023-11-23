@@ -29,6 +29,7 @@ class produtoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
+    
     public function store(Request $request)
     {
         $produtos = new products();
@@ -46,7 +47,7 @@ class produtoController extends Controller
 
             $image = $request->file('file-image');
 
-            $produtos->image = $image->store('uploads','public');
+            $produtos->image = 'storage/' . $image->store('uploads','public');
         }
 
         $produtos->save();

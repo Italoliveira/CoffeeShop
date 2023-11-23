@@ -1,12 +1,10 @@
 <x-layouts.app>
 
-    {{-- <x-home.carroseul/> --}}
-
     @foreach ($categorias as $categoria)
 
         <div class="my-10 mx-10">
 
-            <div class="flex justify-center items-center h-14 my-5">
+            <div class="flex justify-center items-center h-14 my-16">
 
                 <div class="subtitulo">
                     <h1>{{$categoria->name}}</h1>
@@ -14,8 +12,9 @@
                 
             </div>
 
-            <div class="p-2 grid grid-cols-5 gap-x-2 gap-y-4 justify-between">
-
+            <div class="p-2 grid mx-auto grid-cols-4 gap-x-4 gap-y-6 ">
+                
+                    
                 @foreach($produtos as $produto)
 
                     @if($produto->category == $categoria->id)

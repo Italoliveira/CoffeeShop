@@ -135,6 +135,7 @@
                 @foreach ($PedidosAndamentos as $PedidosAndamento)
                     <form action="{{ route('cancelOrder') }}" method="post"
                         id="cancel-order-{{ $PedidosAndamento['info']['id'] }}">
+                        <input type="hidden" name="id" value="{{ $PedidosAndamento['info']['id'] }}">
                         @csrf
                     </form>
 
@@ -175,7 +176,7 @@
                                     - {{ $PedidosAndamento['address']['neighborhood'] }}
                                 </span>
                                 <span> <b>Telefone:
-                                    </b>{{ sprintf('(%s) %s-%s', substr($PedidoSolicitado['user']['phone'], 0, 2), substr($PedidoSolicitado['user']['phone'], 2, 5), substr($PedidoSolicitado['user']['phone'], 7)) }}</span>
+                                    </b>{{ sprintf('(%s) %s-%s', substr($PedidosAndamento['user']['phone'], 0, 2), substr($PedidosAndamento['user']['phone'], 2, 5), substr($PedidosAndamento['user']['phone'], 7)) }}</span>
                                 <span> <b>Pagamento: </b> {{ $PedidosAndamento['info']['payment'] }} </span>
 
                             </div>

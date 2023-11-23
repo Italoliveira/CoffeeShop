@@ -16,13 +16,15 @@ class UsersSeeder extends Seeder
 
         $users = [
             ['newton','newton@email.com',password_hash('senha123',PASSWORD_BCRYPT),'61996715125','1'],
-            ['admin','admin@coffee.com',password_hash('senha321',PASSWORD_BCRYPT),'','2']
+            ['admin','admin@coffee.com',password_hash('senha321',PASSWORD_BCRYPT),'','2'], 
+            ['luiz','luiz@email.com',password_hash('senha123',PASSWORD_BCRYPT),'','1']
         ];
 
         foreach($users as $user){
             $db = new User();
             $db->name = $user[0];
             $db->email = $user[1];
+            $db->status = 'A';
             $db->password = $user[2];
             $db->phone = $user[3];
             $db->tier = $user[4];

@@ -7,6 +7,9 @@
             <span class="self-center text-3xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white ">ADMIN</span>
           </a>
         </div>
+        <div class="text-white font-semibold text-sm hover:text-gray-200">
+            <a href="{{route('home')}}"> Visualizar Pagina Principal </a>
+        </div>
       </div>
     </div>
   </nav>

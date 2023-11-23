@@ -31,11 +31,15 @@
 
             @foreach ($reports as $report)
 
+                @php
+                    $data = new DateTime({{$report->data}});
+                @endphp
+
                 <div class="bg-white rounded-sm shadow-white shadow-sm p-3 space-y-4 my-1 flex items-end">
 
                     <div class="flex flex-col justify-center items-center w-1/5">
                         <span class="text-sm font-semibold">Data</span>
-                        <span class="text-lg">{{$report->data}}</span>
+                        <span class="text-lg">{{$data->format('d/m/Y')}}</span>
                     </div>
                     
                     <div class="flex flex-col justify-center items-center w-1/5">

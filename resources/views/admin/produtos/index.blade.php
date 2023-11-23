@@ -199,12 +199,12 @@
                 </thead>
 
                 <tbody>
-
+                    
                     @foreach ($produtos as $produto)
                         <tr class="bg-white border-b hover:bg-gray-50 text-center">
 
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap ">
-                                <img src="{{ asset('storage/' . $produto->image) }}" class="h-16 w-16 rounded-xl">
+                                <img src="{{ asset($produto->image) }}" class="h-16 w-16 rounded-xl">
                             </th>
 
                             <td class="px-6 py-4">

@@ -74,12 +74,14 @@ class OrdersController extends Controller
     public function cancelOrder(Request $request)
     {
 
-        if ($order = orders::where('id', $request->id)->first()) {
+        if ($order = orders::where('id', $request->id )->first()) {
 
+            
             $order->status = 'X';
             $order->save();
 
             return redirect()->route('orders');
+
         } else {
 
             return redirect()->route('orders')->withErrors([
