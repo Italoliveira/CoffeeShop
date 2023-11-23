@@ -75,7 +75,7 @@
                 <div class="flex items-center space-x-6 justify-center flex-1">
                     <div class="shrink-0">
                         <img id='preview_img' class="h-16 w-16 object-cover rounded-sm"
-                            src="{{ asset('storage/' . $produto->image) }}" alt="Current profile photo" />
+                            src="{{ asset( $produto->image) }}" alt="Current profile photo" />
                     </div>
                     <label>
                         <input type="file" onchange="loadFile(event)"

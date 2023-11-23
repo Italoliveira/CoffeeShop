@@ -22,7 +22,7 @@
 
                 <div class="flex w-2/5"> 
                     <div class="w-32">
-                    <img class="h-24 w-28" src="{{ asset('storage/' . $produto->image) }}">
+                    <img class="h-24 w-28" src="{{ asset($produto->image) }}">
                     </div>
                     <div class="flex flex-col justify-between ml-4 flex-grow">
                     <span class="font-bold text-sm">{{$produto->name}}</span>

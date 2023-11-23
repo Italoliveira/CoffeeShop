@@ -63,7 +63,7 @@
                     <div>
                         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "
                             onclick="ShowFormAdress()" id="btn-NewAdd">
-                            Novo Produto
+                            Novo Endereço
                         </button>
 
                         <div class="flex items-center space-x-2">
