@@ -1,4 +1,4 @@
-<p align="center">CoffeeShop</a></p>
+<p align="center"><h1>CoffeeShop</h1></p>
 
 
 ## About Project
